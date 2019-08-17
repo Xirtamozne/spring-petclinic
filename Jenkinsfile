@@ -7,7 +7,7 @@ pipeline {
         maven "Maven361"
     }
     environment {
-        // This can be nexus3 or nexus2
+        // Simulating update by updating comment.
         NEXUS_VERSION = "nexus3"
         // This can be http or https
         NEXUS_PROTOCOL = "http"
