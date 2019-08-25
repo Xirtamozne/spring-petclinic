@@ -36,10 +36,16 @@ pipeline {
         stage("Run unit tests...") {
             steps {
                 script {
-                    sh "mvn test"
+                    try {
+                       sh "mvn test -B"
+                    } catch(err) {
+                        error "*** Did not complete all tests successfully ***";
+                        throw err
+                    }
                 }
             }
         }
+        
         stage("publish to nexus") {
             steps {
                 script {
