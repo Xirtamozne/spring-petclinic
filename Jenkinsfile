@@ -29,7 +29,14 @@ pipeline {
         stage("Build Petclinic project...") {
             steps {
                 script {
-                    sh "mvn package -DskipTests=true"
+                    sh "mvn package"
+                }
+            }
+        }
+        stage("Run unit tests...") {
+            steps {
+                script {
+                    sh "mvn test"
                 }
             }
         }
