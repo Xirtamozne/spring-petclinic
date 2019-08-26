@@ -33,17 +33,21 @@ pipeline {
                 }
             }
         }
-        stage("Run unit tests...") {
-            steps {
-                script {
-                    ansiColor('xterm') {
-                        try {
-                           sh "mvn test -B"
-                        } catch(err) {
-                            error "*** Did not complete all tests successfully ***";
-                            throw err
-                        }
-                    }
+        stage("Run unit tests...") 
+        {
+            steps 
+            {
+                script 
+                {
+                            try 
+                            {
+                               sh "mvn test -B"
+                            } catch(err) 
+                            {
+                                error "*** Did not complete all tests successfully ***";
+                                throw err
+                            }
+                       
                 }
             }
         }
