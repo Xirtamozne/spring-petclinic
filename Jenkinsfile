@@ -22,18 +22,14 @@ pipeline {
         stage("Clone petclinic project") {
             steps {
                 script {
-                    ansiColor('xterm') {
                         git 'https://github.com/Xirtamozne/spring-petclinic.git';
-                    }
                 }
             }
         }
         stage("Build Petclinic project...") {
             steps {
                 script {
-                    ansiColor('xterm') {
                         sh "mvn package"
-                    }
                 }
             }
         }
@@ -56,9 +52,7 @@ pipeline {
             steps {
                 script 
                 {
-                    ansiColor('xterm')
-                    {
-                        releaseNum = currentBuild.timeInMillis
+                       releaseNum = currentBuild.timeInMillis
                         VERSION = "2.1.0.${releaseNum}"
                         // Read POM xml file using 'readMavenPom' step , this step 'readMavenPom' is included in: https://plugins.jenkins.io/pipeline-utility-steps
                         pom = readMavenPom file: "pom.xml";
@@ -96,7 +90,7 @@ pipeline {
                         } else {
                             error "*** File: ${artifactPath}, could not be found";
                         }
-                    }
+                    
                 }
             }
         }
