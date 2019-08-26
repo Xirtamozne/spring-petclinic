@@ -12,7 +12,7 @@ pipeline {
         // This can be http or https
         NEXUS_PROTOCOL = "http"
         // Where your Nexus is running
-        NEXUS_URL = "54.175.93.37:8081"
+        NEXUS_URL = "localhost:8081"
         // Repository where we will upload the artifact
         NEXUS_REPOSITORY = "liatrio-artifacts"
         // Jenkins credential id to authenticate to Nexus OSS
