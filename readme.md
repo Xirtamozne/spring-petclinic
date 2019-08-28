@@ -141,4 +141,4 @@ The Spring PetClinic sample application is released under version 2.0 of the [Ap
 
 # Updates
 1. Simulate push from git commit
-2. Test webhook...
+2. Test webhook.
